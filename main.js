@@ -22,7 +22,7 @@ const playRound = (playerSelection, computerSelection) => {
 
   if (playerSelection == "Rock") {
     if (computerSelection == "Paper") {
-      consoel.log(loseMessage(computerSelection, playerSelection));
+      console.log(loseMessage(computerSelection, playerSelection));
       return 0;
     } else {
       console.log(winMessage(playerSelection, computerSelection));
@@ -42,7 +42,7 @@ const playRound = (playerSelection, computerSelection) => {
 
   if (playerSelection == "Scissors") {
     if (computerSelection == "Rock") {
-      consoel.log(loseMessage(computerSelection, playerSelection));
+      console.log(loseMessage(computerSelection, playerSelection));
       return 0;
     } else {
       console.log(winMessage(playerSelection, computerSelection));
@@ -55,10 +55,9 @@ function game() {
   let playerWins = 0;
   let computerWins = 0;
 
-  for (let i = 0; i < 5; i++) {
+  while(playerWins != 5 && computerWins != 5){
     let playerSelection = prompt("Choose either: Rock, Paper or Scissors");
-    playerSelection =
-      playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
 
     let computerSelection = getComputerChoice();
     let roundWinnner = playRound(playerSelection, computerSelection);
@@ -69,10 +68,8 @@ function game() {
 
   if (playerWins > computerWins) {
     console.log("The player wins");
-  } else if (computerWins > playerWins) {
+  } else{
     console.log("The computer wins");
-  } else {
-    console.log("It's a tie!");
   }
 }
 
