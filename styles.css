@@ -1,7 +1,30 @@
-.title{
-    color: blue;
+body{
+    margin: 0;
 }
 
-body{
-    background-color: blue;
+/* header or title */
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #080A47;
+}
+
+.title{
+    font-family: fantasy;
+    font-size: 50px;
+    color: #e67070;
+}
+
+/* Footer */
+.footer{
+    background-color: #080A47;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.footer-text{
+    color: white;
 }
