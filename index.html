@@ -12,18 +12,42 @@
     <header class="header">
       <h1 class="title">Rock Paper Scissors</h1>
     </header>
-    <main>
+
+    <main class="main">
+      <h2 class="announcement">Choose your Weapon!</h2>
+      <h3 class="text">Do you have what it takes to beat the computer?</h3>
+      <h3 class="text">First to 5 is victorious!!!!</h3>
+
+      <div class="scoreboard-container">
+        <nav class="score-box">
+          <p class="choice" id="playerChoice">?</p>
+          <p class="score" id="playerScore">Player: 0</p>
+        </nav>
+        <nav class="score-box">
+          <p class="choice" id="computerChoice">?</p>
+          <p class="score" id="computerScore">Computer: 0</p>
+        </nav>
+      </div>
+
       <div class="rps-buttons">
-        <button>
-          <img
-            src="https://nationaltoday.com/wp-content/uploads/2021/08/National-Pet-Rock-Day-640x514.jpg"
-            alt="funny picture of a rock"
-          />
-        </button>
-        <button></button>
-        <button></button>
+        <nav class="rock-button">
+          <button>
+            &#129704
+          </button>
+        </nav>
+        <nav class="paper-button">
+          <button>
+            	&#129531
+          </button>
+        </nav>
+        <nav class="scissors-button">
+          <button>
+            &#9986
+          </button>
+        </nav>
       </div>
     </main>
+
     <footer class="footer">
       <span class="footer-text">Copyright @ The Odin Project 2021</span>
     </footer>
