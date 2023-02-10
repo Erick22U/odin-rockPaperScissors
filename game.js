@@ -87,16 +87,28 @@ function updateScore(){
     guiCompScore.innerText = "Computer: " + computerScore
     guiPlayerScore.innerText = "Player: " + playerScore
 }
+
+function openOverlay(){
+    overlay.style.display = 'flex';
+    overlay.style.justifyContent = "center";
+    overlay.style.alignContent = "center"
+}
 // Starts the game and decides winner
 function onClick(playerChoice) {
-  isGameOver();
+  if(isGameOver()){
+    openOverlay();
+    return
+  }
 
   const computerChoice = getComputerChoice();
   playRound(playerChoice, computerChoice);
   updateChoiceSelection(playerChoice, computerChoice);
   updateScore()
 
-  isGameOver()
+  if(isGameOver()){
+    openOverlay();
+    return
+  }
 }
 
 // Get all the buttons
@@ -114,6 +126,10 @@ const btnSign = document.getElementsByClassName("sign");
 //Scoreboard 
 const guiPlayerScore = document.getElementById('playerScore')
 const guiCompScore = document.getElementById('computerScore');
+
+//Overlay
+const overlay = document.getElementById('overlay')
+
 //Adding events to all buttons
 rockBtn.addEventListener("click", () => onClick("Rock"));
 paperBtn.addEventListener("click", () => onClick("Paper"));
