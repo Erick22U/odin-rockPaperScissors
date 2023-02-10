@@ -26,49 +26,71 @@
 }
 
 .announcement,
-.text{
-    font-family: cursive;
-    color: #e67070;
+.text {
+  font-family: cursive;
+  color: #e67070;
 }
-.announcement{
-    font-size: 40px;
-    padding: 10px;
-}
-
-.text{
-    font-size: 25px;
-    padding: 10px;
+.announcement {
+  font-size: 40px;
+  padding: 10px;
 }
 
-.scoreboard-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: 500px;
+.text {
+  font-size: 25px;
+  padding: 10px;
 }
 
-.score-box{
-    width: 200px;
-    height: 200px;
+.scoreboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 500px;
 }
 
-.score{
-    font-size: 25px;
-    font-family: cursive;
-    color: #b9bac7;
+.score-box {
+  width: 200px;
+  height: 200px;
 }
 
-.choice{
-    font-size: 120px;
-    margin-bottom: 15px;
-    color: #b9bac7;
+.score {
+  font-size: 25px;
+  font-family: cursive;
+  color: #b9bac7;
 }
 
-.rps-buttons{
-    display: flex;
-    justify-content: center;
+.choice {
+  font-size: 120px;
+  margin-bottom: 15px;
+  color: #b9bac7;
 }
+
+/* Buttons */
+
+.rps-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 50px 0px;
+}
+
+.btn {
+  border-radius: 10px;
+  background-color: #2c2e47;
+}
+
+.btn-square {
+  height: 160px;
+  width: 160px;
+  background-color: #66706e;
+  border: none;
+}
+
+.sign{
+    font-size: 100px;
+}
+
 /* Footer */
 .footer {
   background-color: #222442;

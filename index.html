@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Rock Paper Scissors!</title>
-    <script src="main.js"></script>
   </head>
   <body>
     <header class="header">
@@ -30,26 +29,21 @@
       </div>
 
       <div class="rps-buttons">
-        <nav class="rock-button">
-          <button>
-            &#129704
+          <button class="btn btn-square" id="rockBtn">
+            <div class="sign">&#129704</div>
           </button>
-        </nav>
-        <nav class="paper-button">
-          <button>
-            	&#129531
+          <button class="btn btn-square" id="paperBtn">
+            	<div class="sign">&#129531</div>
           </button>
-        </nav>
-        <nav class="scissors-button">
-          <button>
-            &#9986
+          <button class="btn btn-square" id="scissorsBtn">
+            <div class="sign">✄</div>
           </button>
-        </nav>
       </div>
     </main>
 
     <footer class="footer">
       <span class="footer-text">Copyright @ The Odin Project 2021</span>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
