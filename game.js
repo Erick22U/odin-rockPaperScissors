@@ -69,14 +69,34 @@ function updateChoiceSelection(playerChoice, computerChoice) {
   }
 }
 
+//Updates the score in the gui
+function updateScore(){
+
+    switch(roundWinnner){
+        case "tie":
+            console.log("It's a tie");
+            break;
+        case "lose":
+            console.log("You lost this round!!!");
+            break;
+        case "win":
+            console.log("You won this round, keep it up!");
+            break
+    }
+
+    guiCompScore.innerText = "Computer: " + computerScore
+    guiPlayerScore.innerText = "Player: " + playerScore
+}
 // Starts the game and decides winner
 function onClick(playerChoice) {
   isGameOver();
 
   const computerChoice = getComputerChoice();
   playRound(playerChoice, computerChoice);
-
   updateChoiceSelection(playerChoice, computerChoice);
+  updateScore()
+
+  isGameOver()
 }
 
 // Get all the buttons
@@ -91,6 +111,9 @@ const guiComputerChoice = document.getElementById("computerChoice");
 //button signs
 const btnSign = document.getElementsByClassName("sign");
 
+//Scoreboard 
+const guiPlayerScore = document.getElementById('playerScore')
+const guiCompScore = document.getElementById('computerScore');
 //Adding events to all buttons
 rockBtn.addEventListener("click", () => onClick("Rock"));
 paperBtn.addEventListener("click", () => onClick("Paper"));
