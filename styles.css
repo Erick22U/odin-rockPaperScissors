@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* header or title */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121321;
+  padding: 30px;
+}
+
+.title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 50px;
+  color: yellow;
+}
+
+/* Main */
+.main {
+  text-align: center;
+  background-color: #222442;
+  padding: 20px 0px;
+}
+
+.announcement,
+.text {
+  font-family: cursive;
+  color: #e67070;
+}
+.announcement {
+  font-size: 40px;
+  padding: 10px;
+}
+
+.text {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.scoreboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.score-box {
+  width: 200px;
+  height: 200px;
+}
+
+.score {
+  font-size: 25px;
+  font-family: cursive;
+  color: #b9bac7;
+}
+
+.choice {
+  font-size: 120px;
+  margin-bottom: 15px;
+  color: #b9bac7;
+}
+
+/* Buttons */
+
+.rps-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 50px 0px;
+}
+
+.btn {
+  border-radius: 10px;
+  background-color: #2c2e47;
+}
+
+.btn-square {
+  height: 160px;
+  width: 160px;
+  background-color: #66706e;
+  border: none;
+}
+
+.sign{
+    font-size: 100px;
+}
+
+/* Footer */
+.footer {
+  background-color: #222442;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.footer-text {
+  color: white;
+}
+
+/* Overlay */
+#overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.restartContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.restartScreen{
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: white;
+    height: 250px;
+    width: 250px;
+}
