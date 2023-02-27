@@ -19,7 +19,10 @@ function getComputerChoice() {
 
 //Play game
 function playRound(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) return "tie";
+  if (playerChoice == computerChoice) {
+    roundWinnner = "tie";
+    return;
+  }
 
   if (
     (playerChoice == "Rock" && computerChoice == "Paper") ||
@@ -37,7 +40,12 @@ function playRound(playerChoice, computerChoice) {
 //is game over
 function isGameOver() {
   if (computerScore == 5 || playerScore == 5) {
-    console.log("Game over");
+    if(playerScore == 5){
+      result[1].innerText = "Congrats, you beat the computer!"
+    }
+    else{
+      result[1].innerText = "You have lost the war against the machine"
+    }
     return true;
   } else return false;
 }
@@ -70,46 +78,45 @@ function updateChoiceSelection(playerChoice, computerChoice) {
 }
 
 //Updates the score in the gui
-function updateScore(){
+function updateScore() {
+  switch (roundWinnner) {
+    case "tie":
+      result[1].innerText = "It's a tie";
+      break;
+    case "computer":
+      result[1].innerText = "You lost this round!!!";
+      break;
+    case "player":
+      result[1].innerText = "You won this round, keep it up!";
+      break;
+  }
 
-    switch(roundWinnner){
-        case "tie":
-            console.log("It's a tie");
-            break;
-        case "lose":
-            console.log("You lost this round!!!");
-            break;
-        case "win":
-            console.log("You won this round, keep it up!");
-            break
-    }
-
-    guiCompScore.innerText = "Computer: " + computerScore
-    guiPlayerScore.innerText = "Player: " + playerScore
+  guiCompScore.innerText = "Computer: " + computerScore;
+  guiPlayerScore.innerText = "Player: " + playerScore;
 }
 
-function openOverlay(){
-    overlay.style.display = 'flex';
-    overlay.style.justifyContent = "center";
-    overlay.style.alignContent = "center"
+function openOverlay() {
+  overlay.style.display = "flex";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignContent = "center";
 }
 // Starts the game and decides winner
 function onClick(playerChoice) {
-  if(isGameOver()){
-    openOverlay();
-    return
+  if (isGameOver()) {
+    return;
   }
 
   const computerChoice = getComputerChoice();
   playRound(playerChoice, computerChoice);
   updateChoiceSelection(playerChoice, computerChoice);
-  updateScore()
+  updateScore();
 
-  if(isGameOver()){
-    openOverlay();
-    return
+  if (isGameOver()) {
+    return;
   }
 }
+
+
 
 // Get all the buttons
 const rockBtn = document.getElementById("rockBtn");
@@ -123,14 +130,18 @@ const guiComputerChoice = document.getElementById("computerChoice");
 //button signs
 const btnSign = document.getElementsByClassName("sign");
 
-//Scoreboard 
-const guiPlayerScore = document.getElementById('playerScore')
-const guiCompScore = document.getElementById('computerScore');
+//Scoreboard
+const guiPlayerScore = document.getElementById("playerScore");
+const guiCompScore = document.getElementById("computerScore");
 
-//Overlay
-const overlay = document.getElementById('overlay')
+//Results Announcement
+const result = document.getElementsByClassName("announcement");
+
+//Restart Button
+const restart = document.getElementById('restart')
 
 //Adding events to all buttons
 rockBtn.addEventListener("click", () => onClick("Rock"));
 paperBtn.addEventListener("click", () => onClick("Paper"));
 scissorsBtn.addEventListener("click", () => onClick("Scissors"));
+restart.addEventListener('click', () => location.reload())
